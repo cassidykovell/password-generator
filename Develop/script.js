@@ -1,4 +1,6 @@
 // Assignment code here
+
+//Here I am setting the global variables for my criteria
 var lowercaseGlobal = ['a',
 'b',
 'c',
@@ -85,6 +87,7 @@ var specialGlobal = ['@',
 '_',
 '.',]
 
+//Here I am starting the function that will generate my random password
 function generatePassword() {
   var userInput = prompt("How many characters would you like your password to have?");
   userInput = parseInt(userInput);
@@ -93,7 +96,9 @@ function generatePassword() {
     alert("Please choose a number between 8 and 128");
     return generatePassword();
   }
+//Above I am prompting the user to select how many characters that the user wants to have and setting a condtion about how many they can have 
 
+//Below I am having the user confirm which criteria they want in their password
   var lowerCase = confirm("Do you want to use lowercase letters?");
   console.log(lowerCase);
 
@@ -108,6 +113,7 @@ function generatePassword() {
 
   var possibleCharacters = [];
 
+//Below I am setting conditions for what criteria the user wants and outlining that they have to choose one
   if (lowerCase === true) {
     possibleCharacters = possibleCharacters.concat(lowercaseGlobal);
     console.log(possibleCharacters);
@@ -137,6 +143,7 @@ function generatePassword() {
     password += possibleCharacters[Math.floor(Math.random() * possibleCharacters.length)];
   }
 
+//When all condition are met they will recieve their passeord
   return password;
 }
 
